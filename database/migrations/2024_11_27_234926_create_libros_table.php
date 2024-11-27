@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateLibrosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('libros', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id(); // ID del libro
+            $table->string('titulo'); // Título del libro
+            $table->string('autor'); // Autor del libro
+            $table->string('isbn')->unique(); // ISBN único
+            $table->string('editorial')->nullable(); // Editorial (opcional)
+            $table->date('publicado_en')->nullable(); // Fecha de publicación
+            $table->timestamps(); // created_at y updated_at
         });
     }
 
@@ -24,4 +29,4 @@ return new class extends Migration
     {
         Schema::dropIfExists('libros');
     }
-};
+}
