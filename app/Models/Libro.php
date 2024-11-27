@@ -5,21 +5,22 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Doctor extends Model
+class Libro extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nombres','apellidos','telefono','licencia_medica','especialidad','user_id'];
+    // Campos asignables en la base de datos para la tabla "libros"
+    protected $fillable = ['titulo', 'autor', 'isbn', 'editorial', 'publicado_en', 'categoria_id'];
 
-    public function consultorio(){
-        return $this->belongsTo(Consultorio::class);
-
+    // Relación con la tabla "categorias" (opcional)
+    public function categoria()
+    {
+        
     }
-    public function horarios(){
-    return $this->hasMany(Horario::class);
-    }
-    public function user(){
 
-        return $this->belongsTo(User::class);
+    // Si los libros tienen préstamos
+    public function prestamos()
+    {
+       
     }
 }

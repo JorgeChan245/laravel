@@ -23,22 +23,36 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //rutas para el admin
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.index')->middleware('auth');
 //rutas para el admin-uruarios
-Route::get('/admin/usuarios', [App\Http\Controllers\UsuarioController::class, 'index'])->name('admin.usuarios.index')->middleware('auth');
-
-//para la creacion de las tablas principal
-Route::get('/admin/usuarios/create', [App\Http\Controllers\UsuarioController::class, 'create'])->name('admin.usuarios.create')->middleware('auth');
-//
-Route::post('/admin/usuarios/create', [App\Http\Controllers\UsuarioController::class, 'store'])->name('admin.usuarios.store')->middleware('auth');
-//para el usuario
-Route::get('/admin/usuarios/{id}', [App\Http\Controllers\UsuarioController::class, 'show'])->name('admin.usuarios.show')->middleware('auth');
-//para poder hacer la edicion de editar
-Route::get('/admin/usuarios/{id}/edit', [App\Http\Controllers\UsuarioController::class, 'edit'])->name('admin.usuarios.edit')->middleware('auth');
-//sigue siendo la misma solo que esta ruta nos va a servir para crear la ruta que mande para poder actualizar
-Route::put('/admin/usuarios/{id}', [App\Http\Controllers\UsuarioController::class, 'update'])->name('admin.usuarios.update')->middleware('auth');
-//para realizar el delete
-Route::get('/admin/usuarios/{id}/confirm-delete', [App\Http\Controllers\UsuarioController::class, 'confirmDelete'])->name('admin.usuarios.confirmDelete')->middleware('auth');
-//metodo delete 
-Route::delete('/admin/usuarios/{id}', [App\Http\Controllers\UsuarioController::class, 'destroy'])->name('admin.usuarios.destroy')->middleware('auth');
+// Para la lista principal de libros
+Route::get('/admin/libros', [App\Http\Controllers\LibroController::class, 'index'])
+    ->name('admin.libros.index')
+    ->middleware('auth');
+// Para la creación de libros
+Route::get('/admin/libros/create', [App\Http\Controllers\LibroController::class, 'create'])
+    ->name('admin.libros.create')
+    ->middleware('auth');
+Route::post('/admin/libros/create', [App\Http\Controllers\LibroController::class, 'store'])
+    ->name('admin.libros.store')
+    ->middleware('auth');
+// Para mostrar un libro específico
+Route::get('/admin/libros/{id}', [App\Http\Controllers\LibroController::class, 'show'])
+    ->name('admin.libros.show')
+    ->middleware('auth');
+// Para la edición de libros
+Route::get('/admin/libros/{id}/edit', [App\Http\Controllers\LibroController::class, 'edit'])
+    ->name('admin.libros.edit')
+    ->middleware('auth');
+Route::put('/admin/libros/{id}', [App\Http\Controllers\LibroController::class, 'update'])
+    ->name('admin.libros.update')
+    ->middleware('auth');
+// Para confirmar la eliminación de un libro
+Route::get('/admin/libros/{id}/confirm-delete', [App\Http\Controllers\LibroController::class, 'confirmDelete'])
+    ->name('admin.libros.confirmDelete')
+    ->middleware('auth');
+// Para realizar la eliminación
+Route::delete('/admin/libros/{id}', [App\Http\Controllers\LibroController::class, 'destroy'])
+    ->name('admin.libros.destroy')
+    ->middleware('auth');
 /////////////////// rutas para el admin - secretarias
 Route::get('/admin/secretarias', [App\Http\Controllers\SecretariaController::class, 'index'])->name('admin.secretarias.index')->middleware('auth');
 //con esta empezamos a crear
