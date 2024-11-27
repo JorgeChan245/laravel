@@ -1,21 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
-*/*/
-use App\Models\Doctor;
-use App\Models\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 
-class DoctorController extends Controller
+use App\Models\Libro;
+use Illuminate\Http\Request;
+
+class LibroController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $doctores = Doctor::with('user')->get();
-        return view('admin.doctores.index', compact('doctores'));
+        $libros = Libro::all();
+        return view('admin.libros.index', compact('libros'));
     }
 
     /**
@@ -23,7 +21,7 @@ class DoctorController extends Controller
      */
     public function create()
     {
-        return view('admin.doctores.create');
+        return view('admin.libros.create');
     }
 
     /**
@@ -31,38 +29,25 @@ class DoctorController extends Controller
      */
     public function store(Request $request)
     {
-       
         $request->validate([
-          'nombres' => 'required',
-          'apellidos' => 'required',
-          'telefono'=> 'required',
-         'licencia_medica'=> 'required',
-         'especialidad'=> 'required',
-           'email'=>'required|max:250|unique:users',
-      'password'=>'nullable|max:250|confirmed'
-      ]);
-      $usuario = new User();
-      $usuario->name = $request->nombres;
-      $usuario->email=$request->email;
-      $usuario->password= Hash::make( $request['password']);
-      $usuario->save();
+            'titulo' => 'required',
+            'autor' => 'required',
+            'editorial' => 'nullable',
+            'anio_publicacion' => 'nullable|integer',
+            'isbn' => 'required|unique:libros'
+        ]);
 
-      $doctor = new Doctor();
-      $doctor->user_id=$usuario->id;
-      $doctor->nombres = $request->nombres;
-      $doctor->apellidos = $request->apellidos;
-      $doctor->telefono = $request->telefono;
-      $doctor->licencia_medica = $request->licencia_medica;
-      $doctor->especialidad = $request->especialidad;
-    
-      $doctor->save();
+        $libro = new Libro();
+        $libro->titulo = $request->titulo;
+        $libro->autor = $request->autor;
+        $libro->editorial = $request->editorial;
+        $libro->anio_publicacion = $request->anio_publicacion;
+        $libro->isbn = $request->isbn;
+        $libro->save();
 
-      $usuario->assignRole('doctor');
-//para mandar el mensaje de alerta de doctor es icono de que todo salio bien en 
-return redirect()->route('admin.doctores.index')
-->with('mensaje','se registro la doctor de forma correcta')
-->with('icon','success');
-
+        return redirect()->route('admin.libros.index')
+            ->with('mensaje', 'El libro se registró correctamente')
+            ->with('icon', 'success');
     }
 
     /**
@@ -70,8 +55,8 @@ return redirect()->route('admin.doctores.index')
      */
     public function show($id)
     {
-        $doctor = Doctor::with('user')->findOrFail($id);
-        return view('admin.doctores.show', compact('doctor'));
+        $libro = Libro::findOrFail($id);
+        return view('admin.libros.show', compact('libro'));
     }
 
     /**
@@ -79,8 +64,8 @@ return redirect()->route('admin.doctores.index')
      */
     public function edit($id)
     {
-        $doctor = Doctor::with('user')->findOrFail($id);
-        return view('admin.doctores.edit', compact('doctor'));
+        $libro = Libro::findOrFail($id);
+        return view('admin.libros.edit', compact('libro'));
     }
 
     /**
@@ -88,53 +73,45 @@ return redirect()->route('admin.doctores.index')
      */
     public function update(Request $request, $id)
     {
-        $doctor = Doctor::find($id);
+        $libro = Libro::find($id);
+
         $request->validate([
-            'nombres' => 'required',
-            'apellidos' => 'required',
-            'telefono'=> 'required',
-           'licencia_medica'=> 'required',
-           'especialidad'=> 'required',
-             'email' => 
-            'nullable', // Permite que el email sea opcional
-            'max:250',
-            'unique:users,email,' . $doctor->user_id,
-        'password'=>'nullable|max:250|confirmed'
+            'titulo' => 'required',
+            'autor' => 'required',
+            'editorial' => 'nullable',
+            'anio_publicacion' => 'nullable|integer',
+            'isbn' => 'required|unique:libros,isbn,' . $id
         ]);
 
-      
-        $doctor->nombres = $request->nombres;
-        $doctor->apellidos = $request->apellidos;
-        $doctor->telefono = $request->telefono;
-        $doctor->licencia_medica = $request->licencia_medica;
-        $doctor->especialidad = $request->especialidad;     
-        $doctor->save();
+        $libro->titulo = $request->titulo;
+        $libro->autor = $request->autor;
+        $libro->editorial = $request->editorial;
+        $libro->anio_publicacion = $request->anio_publicacion;
+        $libro->isbn = $request->isbn;
+        $libro->save();
 
-        $usuario = User::find($doctor->user_id);
-
-        $usuario->name = $request->nombres;
-        $usuario->email = $request->email ? $request->email : $usuario->email;
-        $usuario->password= Hash::make( $request['password']);
-        $usuario->save();
-
-        //para mandar el mensaje de alerta de doctor es icono de que todo salio bien en 
-return redirect()->route('admin.doctores.index')
-->with('mensaje','se actualizo al doctor de forma correcta')
-->with('icon','success');
-
+        return redirect()->route('admin.libros.index')
+            ->with('mensaje', 'El libro se actualizó correctamente')
+            ->with('icon', 'success');
     }
-    public function confirmDelete($id){
-        $doctor = Doctor::findOrFail($id);
-return view('admin.doctores.delete', compact('doctor')); 
+
+    /**
+     * Show the form for confirming deletion of the specified resource.
+     */
+    public function confirmDelete($id)
+    {
+        $libro = Libro::findOrFail($id);
+        return view('admin.libros.delete', compact('libro'));
     }
+
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy( $id)
+    public function destroy($id)
     {
-        Doctor::destroy($id);
-        return redirect()->route('admin.doctores.index')
-->with('mensaje','se elimino el paciente de forma correcta')
-->with('icon','success');
+        Libro::destroy($id);
+        return redirect()->route('admin.libros.index')
+            ->with('mensaje', 'El libro se eliminó correctamente')
+            ->with('icon', 'success');
     }
 }

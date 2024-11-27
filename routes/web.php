@@ -89,21 +89,24 @@ Route::get('/admin/consultorios/{id}/confirm-delete', [App\Http\Controllers\Cons
 //
 Route::delete('/admin/consultorios/{id}', [App\Http\Controllers\ConsultorioController::class, 'destroy'])->name('admin.consultorios.destroy')->middleware('auth');
 
-/////////////////////////////////////// para doctores
-Route::get('/admin/doctores', [App\Http\Controllers\DoctorController::class, 'index'])->name('admin.doctores.index')->middleware('auth');
-Route::get('/admin/doctores/create', [App\Http\Controllers\DoctorController::class, 'create'])->name('admin.doctores.create')->middleware('auth');
-//
-Route::post('/admin/doctores/create', [App\Http\Controllers\DoctorController::class, 'store'])->name('admin.doctores.store')->middleware('auth');
-//
-Route::get('/admin/doctores/{id}', [App\Http\Controllers\DoctorController::class, 'show'])->name('admin.doctores.show')->middleware('auth');
-//
-Route::get('/admin/doctores/{id}/edit', [App\Http\Controllers\DoctorController::class, 'edit'])->name('admin.doctores.edit')->middleware('auth');
-//
-Route::put('/admin/doctores/{id}', [App\Http\Controllers\DoctorController::class, 'update'])->name('admin.doctores.update')->middleware('auth');
-//
-Route::get('/admin/doctores/{id}/confirm-delete', [App\Http\Controllers\DoctorController::class, 'confirmDelete'])->name('admin.doctores.confirmDelete')->middleware('auth');
-//
-Route::delete('/admin/doctores/{id}', [App\Http\Controllers\DoctorController::class, 'destroy'])->name('admin.doctores.destroy')->middleware('auth');
+/////////////////////////////////////// para libros
+// Listar todos los libros
+Route::get('/admin/libros', [App\Http\Controllers\LibroController::class, 'index'])->name('admin.libros.index')->middleware('auth');
+// Mostrar el formulario para crear un libro
+Route::get('/admin/libros/create', [App\Http\Controllers\LibroController::class, 'create'])->name('admin.libros.create')->middleware('auth');
+// Guardar un nuevo libro
+Route::post('/admin/libros/create', [App\Http\Controllers\LibroController::class, 'store'])->name('admin.libros.store')->middleware('auth');
+// Mostrar los detalles de un libro específico
+Route::get('/admin/libros/{id}', [App\Http\Controllers\LibroController::class, 'show'])->name('admin.libros.show')->middleware('auth');
+// Mostrar el formulario para editar un libro
+Route::get('/admin/libros/{id}/edit', [App\Http\Controllers\LibroController::class, 'edit'])->name('admin.libros.edit')->middleware('auth');
+// Actualizar un libro existente
+Route::put('/admin/libros/{id}', [App\Http\Controllers\LibroController::class, 'update'])->name('admin.libros.update')->middleware('auth');
+// Mostrar una página de confirmación para eliminar un libro
+Route::get('/admin/libros/{id}/confirm-delete', [App\Http\Controllers\LibroController::class, 'confirmDelete'])->name('admin.libros.confirmDelete')->middleware('auth');
+// Eliminar un libro
+Route::delete('/admin/libros/{id}', [App\Http\Controllers\LibroController::class, 'destroy'])->name('admin.libros.destroy')->middleware('auth');
+
 /////////////////////////////para horaios
 Route::get('/admin/horarios', [App\Http\Controllers\HorarioController::class, 'index'])->name('admin.horarios.index')->middleware('auth');
 //
