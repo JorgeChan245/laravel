@@ -141,41 +141,6 @@
       </div>
 
     </section><!-- /About Section -->
-
-    <!-- Stats Section -->
-
-
-    <!-- /Stats Section -->
-
-    
-
-      <!-- /Appointment Section -->
-
-    <!-- Departments Section -->
-    
-
-      <!-- Section Title -->
-    <!-- /Departments Section -->
-
-    <!-- Doctors Section -->
-    >
-
-      <!-- Section Title -->
-      <!-- /Doctors Section -->
-
-    <!-- Faq Section -->
-    
-
-      <!-- Section Title -->
-     
-
-    <!-- /Faq Section -->
-
-    <!-- Testimonials Section -->
- 
-
-    
-
        
 
           <!-- End testimonial item -->
@@ -221,23 +186,6 @@
 
       </div>
 
-  <!-- /Gallery Section -->
-
-    <!-- Contact Section -->
-   
-
-      <!-- Section Title -->
-     <!-- End Section Title -->
-
-      <!-- End Google Maps -->
-
-      
-
-   
-
-
-
-   
     <div class="container copyright text-center mt-4">
       <p>© <span>Copyright</span> <strong class="px-1 sitename">Medilab</strong> <span>All Rights Reserved</span></p>
       <div class="credits">

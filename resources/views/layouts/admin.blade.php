@@ -147,89 +147,7 @@ body.dark-mode {
             </ul>
           </li>
            @endcan
-           
-           <!-- secretarias Menu -->
-            @can('admin.secretarias.index')
-              
-           
-          <li class="nav-item">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas bi bi-person-circle"></i>
-              <p>
-                secretarias
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{ url('admin/secretarias/create') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Creación de secretarias</p>
-                </a> 
-              </li>
-              <li class="nav-item"> 
-                <a href="{{ url('admin/secretarias') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Listado de secretarias</p>
-                </a>
-              </li>
-            </ul>
-          </li>
- @endcan
-           <!-- pacientess Menu -->
-            @can('admin.pacientes.index')             
-           
-           <li class="nav-item">
-            <a href="#" class="nav-link active">
-            <i class="bi bi-person-square"></i>
-              <p>
-                pacientes
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{ url('admin/pacientes/create') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Creación de pacientes</p>
-                </a> 
-              </li>
-              <li class="nav-item"> 
-                <a href="{{ url('admin/pacientes') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Listado de pacientes</p>
-                </a>
-              </li>
-            </ul>
-          </li>
- @endcan
-          <!-- consultorios Menu -->
-           @can('admin.consultorios.index')           
-           
-          <li class="nav-item">
-            <a href="#" class="nav-link active">
-            <i class="bi bi-building-fill-add"></i>
-              <p>
-                Consultorios
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{ url('admin/consultorios/create') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Creación de Consultorios</p>
-                </a> 
-              </li>
-              <li class="nav-item"> 
-                <a href="{{ url('admin/consultorios') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Listado de consultorios</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-@endcan
+  
  <!-- Libros Menu -->
 @if ('admin.libros.index')
 
@@ -260,36 +178,6 @@ body.dark-mode {
 
 
 @endif
-
-           <!-- Horarios Menu -->
-            @can('admin.horarios.index')
-              
-          
-           <li class="nav-item">
-            <a href="#" class="nav-link active">
-            <i class="bi bi-calendar3"></i>
-              <p>
-                Horarios
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{ url('admin/horarios/create') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Creación de Horarios</p>
-                </a> 
-              </li>
-              <li class="nav-item"> 
-                <a href="{{ url('admin/horarios') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Listado de horarios</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-  @endcan
-
 
           <!-- Logout -->
 
