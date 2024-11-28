@@ -74,13 +74,13 @@
     <div class="col-lg-3 col-6">
     <div class="small-box  bg-danger">
             <div class="inner">
-                <h3>{{ $total_doctores }}</h3>
-                <p>doctores</p>
+                <h3>{{ $total_libros }}</h3>
+                <p>libros</p>
             </div>
             <div class="icon">
             <i class="bi bi-person-raised-hand"></i>
             </div>
-            <a href="{{ url('/admin/doctores/') }}" class="small-box-footer">Más información <i class="bi bi-person-raised-hand"></i></a>
+            <a href="{{ url('/admin/libros/') }}" class="small-box-footer">Más información <i class="bi bi-person-raised-hand"></i></a>
         </div>
     </div>
 
