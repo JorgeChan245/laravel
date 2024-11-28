@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 <div class="row" style="margin-left: 20px;">
-    <h1>editar: {{$doctor->nombres}} {{$doctor->apellidos}}</h1>
+    <h1>Editar libro: {{$libro->titulo}}</h1>
 </div>
 <hr>
 <div class="row" style="margin-left: 20px;">
@@ -14,15 +14,15 @@
             </div>
 
             <div class="card-body">
-                <form action="{{url('/admin/doctores',$doctor->id)}}" method="POST">
+                <form action="{{url('/admin/libros',$libro->id)}}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="row">
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="nombre">Nombres</label><b>*</b> 
-                                <input type="text" value="{{$doctor->nombres}}" name="nombres" class="form-control" required>    
-                                @error('nombres')
+                                <label for="titulo">Título</label><b>*</b> 
+                                <input type="text" value="{{$libro->titulo}}" name="titulo" class="form-control" required>    
+                                @error('titulo')
                                     <small style="color:red">{{$message}}</small>       
                                 @enderror
                             </div>
@@ -30,9 +30,9 @@
 
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="apellidos">Apellidos</label><b>*</b> 
-                                <input type="text" value="{{$doctor->apellidos}}" name="apellidos" class="form-control" required>    
-                                @error('apellidos')
+                                <label for="autor">Autor</label><b>*</b> 
+                                <input type="text" value="{{$libro->autor}}" name="autor" class="form-control" required>    
+                                @error('autor')
                                     <small style="color:red">{{$message}}</small>       
                                 @enderror
                             </div>
@@ -40,9 +40,9 @@
 
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="telefono">telefono</label><b>*</b> 
-                                <input type="text" value="{{$doctor->telefono}}" name="telefono"class="form-control" required>    
-                                @error('telefono')
+                                <label for="editorial">Editorial</label><b>*</b> 
+                                <input type="text" value="{{$libro->editorial}}" name="editorial" class="form-control" required>    
+                                @error('editorial')
                                     <small style="color:red">{{$message}}</small>       
                                 @enderror
                             </div>
@@ -52,9 +52,9 @@
                     <div class="row">
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="licencia_medica">licencia medica</label><b>*</b> 
-                                <input type="text" value="{{$doctor->licencia_medica}}" name="licencia_medica"  class="form-control" required>    
-                                @error('licencia_medica')
+                                <label for="año_publicacion">Año de Publicación</label><b>*</b> 
+                                <input type="number" value="{{$libro->año_publicacion}}" name="año_publicacion" class="form-control" required>    
+                                @error('año_publicacion')
                                     <small style="color:red">{{$message}}</small>       
                                 @enderror
                             </div>
@@ -62,52 +62,28 @@
 
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="especialidad">especialidad</label><b>*</b> 
-                                <input type="text" value="{{$doctor->especialidad}}" name="especialidad" class="form-control" required>    
-                                @error('especialidad')
+                                <label for="genero">Género</label><b>*</b> 
+                                <select name="genero" class="form-control" required>
+                                    <option value="" disabled>Seleccionar Género</option>
+                                    <option value="Aventura" {{ $libro->genero == 'Aventura' ? 'selected' : '' }}>Aventura</option>
+                                    <option value="Ciencia Ficción" {{ $libro->genero == 'Ficción' ? 'selected' : '' }}>Ficción</option>
+                                    <option value="Fantasía" {{ $libro->genero == 'Terror' ? 'selected' : '' }}>Terror</option>
+                                    <option value="Misterio" {{ $libro->genero == 'Comedia' ? 'selected' : '' }}>Comedia</option>
+                                    <option value="Romántico" {{ $libro->genero == 'Romántico' ? 'selected' : '' }}>Romántico</option>
+                                    <option value="Terror" {{ $libro->genero == 'Terror' ? 'selected' : '' }}>Terror</option>
+                                </select>    
+                                @error('genero')
                                     <small style="color:red">{{$message}}</small>       
                                 @enderror
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="email">Email</label><b>*</b>  
-                                <input type="email" value="{{$doctor->user->email}}" name="email" id="email" class="form-control" >   
-                                @error('email')
-                                    <small style="color:red">{{$message}}</small>       
-                                @enderror   
                             </div>
                         </div>
                     </div>
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="password">Password</label><b>*</b> 
-                                <input type="password" name="password" id="password" class="form-control">
-                                @error('password')
-                                    <small style="color:red">{{$message}}</small>       
-                                @enderror      
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="password_confirmation">Confirmación de Password</label><b>*</b>  
-                                <input type="password" name="password_confirmation" id="password_confirmation" class="form-control">
-                                @error('password_confirmation')
-                                    <small style="color:red">{{$message}}</small>       
-                                @enderror    
-                            </div>
-                        </div>
-                    </div>        
 
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <a href="{{url('admin/doctores')}}" class="btn btn-secondary">Cancelar</a>   
-                                <button type="submit" class="btn btn-success">actualizar doctor</button>
+                                <a href="{{url('admin/libros')}}" class="btn btn-secondary">Cancelar</a>   
+                                <button type="submit" class="btn btn-success">Actualizar libro</button>
                             </div>
                         </div>
                     </div>
@@ -117,4 +93,3 @@
     </div>
 </div>
 @endsection
-  
