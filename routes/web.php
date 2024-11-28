@@ -18,7 +18,7 @@ Route::get('/', function () {  return view('home');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 
 //rutas para el admin
 
