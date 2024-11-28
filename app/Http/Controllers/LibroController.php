@@ -34,6 +34,7 @@ class LibroController extends Controller
             'autor' => 'required',
             'editorial' => 'nullable',
             'año_publicacion' => 'nullable|integer',
+            'genero' => 'nullable|string',
             
         ]);
 
@@ -42,6 +43,7 @@ class LibroController extends Controller
         $libro->autor = $request->autor;
         $libro->editorial = $request->editorial;
         $libro->año_publicacion = $request->año_publicacion ?: 0; 
+        $libro->genero = $request->genero;  
        
         $libro->save();
 
@@ -80,13 +82,15 @@ class LibroController extends Controller
             'autor' => 'required',
             'editorial' => 'nullable',
             'año_publicacion' => 'nullable|integer',
+            'genero' => 'nullable|string',
             
         ]);
 
         $libro->titulo = $request->titulo;
         $libro->autor = $request->autor;
         $libro->editorial = $request->editorial;
-        $libro->anio_publicacion = $request->año_publicacion;
+        $libro->año_publicacion = $request->año_publicacion;
+        $libro->genero = $request->genero;
        
         $libro->save();
 

@@ -230,32 +230,36 @@ body.dark-mode {
             </ul>
           </li>
 @endcan
-    <!-- Libros menu Menu -->
-@can('admin.libros.index')
-  <li class="nav-item">
-    <a href="#" class="nav-link active">
-      <i class="bi bi-book"></i> <!-- Cambié el ícono a uno relacionado con libros -->
-      <p>
-        Libros
-        <i class="right fas fa-angle-left"></i>
-      </p>
-    </a>
-    <ul class="nav nav-treeview">
-      <li class="nav-item">
-        <a href="{{ url('admin/libros/create') }}" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>Crear Libro</p> <!-- Cambié el texto a "Crear Libro" -->
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="{{ url('admin/libros') }}" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>Listado de Libros</p> <!-- Cambié el texto a "Listado de Libros" -->
-        </a>
-      </li>
-    </ul>
-  </li>
-@endcan
+ <!-- Libros Menu -->
+@if ('admin.libros.index')
+
+<li class="nav-item">
+  <a href="#" class="nav-link active">
+    <i class="bi bi-book"></i>
+    <p>
+      Libros
+      <i class="right fas fa-angle-left"></i>
+    </p>
+  </a>
+  <ul class="nav nav-treeview">
+    <li class="nav-item">
+      <a href="{{ url('admin/libros/create') }}" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>Creación de Libros</p>
+      </a> 
+    </li>
+    <li class="nav-item">
+      <a href="{{ url('admin/libros') }}" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>Listado de Libros</p>
+      </a>
+    </li>
+  </ul>
+</li>
+
+
+
+@endif
 
            <!-- Horarios Menu -->
             @can('admin.horarios.index')

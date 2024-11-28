@@ -50,25 +50,36 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="categoria">genero</label><b>*</b> 
-                                <input type="text" value="{{old('genero')}}" name="genero" class="form-control" required>    
-                                @error('genero')
-                                    <small style="color:red">{{$message}}</small>       
-                                @enderror
-                            </div>
-                        </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="genero">Género</label><b>*</b> 
+            <select name="genero" class="form-control" required>
+                <option value="" disabled selected>Selecciona un género</option>
+                <option value="Románticas" {{ old('genero') == 'Románticas' ? 'selected' : '' }}>Románticas</option>
+                <option value="Terror" {{ old('genero') == 'Terror' ? 'selected' : '' }}>Terror</option>
+                <option value="Acción" {{ old('genero') == 'Acción' ? 'selected' : '' }}>Acción</option>
+                <option value="Comedia" {{ old('genero') == 'Comedia' ? 'selected' : '' }}>Comedia</option>
+                <option value="Ficción" {{ old('genero') == 'Ficción' ? 'selected' : '' }}>Ficción</option>
+                <option value="Aventura" {{ old('genero') == 'Aventura' ? 'selected' : '' }}>Aventura</option>
+            </select>
+            @error('genero')
+                <small style="color:red">{{ $message }}</small>       
+            @enderror
+        </div>
+    </div>
+</div>
 
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="anio_publicacion">Año de Publicación</label><b>*</b> 
-                                <input type="number" value="{{old('añio_publicacion')}}" name="añio_publicacion" class="form-control" required>    
-                                @error('añio_publicacion')
-                                    <small style="color:red">{{$message}}</small>       
-                                @enderror
-                            </div>
-                        </div>  
+<div class="col-md-3">
+    <div class="form-group">
+        <label for="año_publicacion">Año de Publicación</label><b>*</b>
+        <input type="number" value="{{ old('año_publicacion') }}" name="año_publicacion" class="form-control" required>
+        @error('año_publicacion')
+            <small style="color:red">{{ $message }}</small>
+        @enderror
+    </div>
+</div>
+
+
                     </div>
 
                     <div class="row">

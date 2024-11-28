@@ -39,8 +39,10 @@
                             <option value="">Todos</option>
                             <option value="Románticas">Románticas</option>
                             <option value="Terror">Terror</option>
-                            <option value="Historia">Historia</option>
-                            <option value="Programación">Programación</option>
+                            <option value="Accion">Accion</option>
+                            <option value="Comedia">Comedia</option>
+                            <option value="Ficcion ">Ficcion</option>
+                            <option value="Aventura">Aventura</option>
                             <!-- Añadir más géneros según sea necesario -->
                         </select>
                     </div>

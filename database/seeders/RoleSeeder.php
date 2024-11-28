@@ -61,15 +61,16 @@ Permission::create(['name' => 'admin.consultorios.edit'])->syncRoles([$admin,$se
 Permission::create(['name' => 'admin.consultorios.update'])->syncRoles([$admin,$secretaria]);
 Permission::create(['name' => 'admin.consultorios.confirmDelete'])->syncRoles([$admin]);
 Permission::create(['name' => 'admin.consultorios.destroy'])->syncRoles([$admin]);
-// Crear permisos para admin - doctores
-Permission::create(['name'=>'admin.doctores.index'])->syncRoles([$admin,$secretaria]);
-Permission::create(['name' => 'admin.doctores.create'])->syncRoles([$admin,$secretaria]);
-Permission::create(['name' => 'admin.doctores.store'])->syncRoles([$admin,$secretaria]);
-Permission::create(['name' => 'admin.doctores.show'])->syncRoles([$admin,$secretaria]);
-Permission::create(['name' => 'admin.doctores.edit'])->syncRoles([$admin,$secretaria]);
-Permission::create(['name' => 'admin.doctores.update'])->syncRoles([$admin,$secretaria]);
-Permission::create(['name' => 'admin.doctores.confirmDelete'])->syncRoles([$admin,$secretaria]);
-Permission::create(['name' => 'admin.doctores.destroy'])->syncRoles([$admin,$secretaria]);
+// Crear permisos para admin - libros
+Permission::create(['name'=>'admin.libros.index'])->syncRoles([$admin,$secretaria]);
+Permission::create(['name' => 'admin.libros.create'])->syncRoles([$admin,$secretaria]);
+Permission::create(['name' => 'admin.libros.store'])->syncRoles([$admin,$secretaria]);
+Permission::create(['name' => 'admin.libros.show'])->syncRoles([$admin,$secretaria]);
+Permission::create(['name' => 'admin.libros.edit'])->syncRoles([$admin,$secretaria]);
+Permission::create(['name' => 'admin.libros.update'])->syncRoles([$admin,$secretaria]);
+Permission::create(['name' => 'admin.libros.confirmDelete'])->syncRoles([$admin,$secretaria]);
+Permission::create(['name' => 'admin.libros.destroy'])->syncRoles([$admin,$secretaria]);
+
 // Crear permisos para admin - horarios
 Permission::create(['name'=>'admin.horarios.index'])->syncRoles([$admin,$secretaria]);
 Permission::create(['name' => 'admin.horarios.create'])->syncRoles([$admin,$secretaria]);
