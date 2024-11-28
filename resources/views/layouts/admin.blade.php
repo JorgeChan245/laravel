@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Reserva de Citas</title>
+  <title>Biblioteca</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -64,7 +64,7 @@ body.dark-mode {
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{ url('/admin') }}" class="nav-link">Reserva de Citas Médicas</a>
+        <a href="{{ url('/admin') }}" class="nav-link">Biblioteca virtual</a>
       </li>
     </ul>
 
@@ -101,7 +101,7 @@ body.dark-mode {
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="{{ url('dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Reserva Citas</span>
+      <span class="brand-text font-weight-light">Biblioteca</span>
     </a>
 
     <!-- Sidebar -->
