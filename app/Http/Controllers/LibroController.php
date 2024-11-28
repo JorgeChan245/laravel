@@ -33,16 +33,16 @@ class LibroController extends Controller
             'titulo' => 'required',
             'autor' => 'required',
             'editorial' => 'nullable',
-            'anio_publicacion' => 'nullable|integer',
-            'isbn' => 'required|unique:libros'
+            'año_publicacion' => 'nullable|integer',
+            
         ]);
 
         $libro = new Libro();
         $libro->titulo = $request->titulo;
         $libro->autor = $request->autor;
         $libro->editorial = $request->editorial;
-        $libro->anio_publicacion = $request->anio_publicacion;
-        $libro->isbn = $request->isbn;
+        $libro->año_publicacion = $request->anio_publicacion;
+       
         $libro->save();
 
         return redirect()->route('admin.libros.index')
@@ -79,8 +79,8 @@ class LibroController extends Controller
             'titulo' => 'required',
             'autor' => 'required',
             'editorial' => 'nullable',
-            'anio_publicacion' => 'nullable|integer',
-            'isbn' => 'required|unique:libros,isbn,' . $id
+            'año_publicacion' => 'nullable|integer',
+            
         ]);
 
         $libro->titulo = $request->titulo;

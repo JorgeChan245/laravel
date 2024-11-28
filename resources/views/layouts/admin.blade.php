@@ -230,7 +230,7 @@ body.dark-mode {
             </ul>
           </li>
 @endcan
-          <!-- Doctores Menu -->
+          <!-- Libros menu Menu -->
            @can('admin.libros.index')
              
            

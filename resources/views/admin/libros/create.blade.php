@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 <div class="row" style="margin-left: 20px;">
-    <h1>Registro de nuevo doctor</h1>
+    <h1>Registro de nuevo libro</h1>
 </div>
 <hr>
 <div class="row" style="margin-left: 20px;">
@@ -14,14 +14,14 @@
             </div>
 
             <div class="card-body">
-                <form action="{{url('/admin/doctores/create')}}" method="POST">
+                <form action="{{url('/admin/libros/create')}}" method="POST">
                     @csrf
                     <div class="row">
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="nombres">Nombre</label><b>*</b> 
-                                <input type="text" value="{{old('nombres')}}" name="nombres" class="form-control" required>    
-                                @error('nombres')
+                                <label for="titulo">Título</label><b>*</b> 
+                                <input type="text" value="{{old('titulo')}}" name="titulo" class="form-control" required>    
+                                @error('titulo')
                                     <small style="color:red">{{$message}}</small>       
                                 @enderror
                             </div>
@@ -29,82 +29,53 @@
 
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="apellidos">apellidos</label><b>*</b> 
-                                <input type="text" value="{{old('apellidos')}}" name="apellidos" class="form-control" required>    
-                                @error('apellidos')
+                                <label for="autor">Autor</label><b>*</b> 
+                                <input type="text" value="{{old('autor')}}" name="autor" class="form-control" required>    
+                                @error('autor')
                                     <small style="color:red">{{$message}}</small>       
                                 @enderror
                             </div>
                         </div>
 
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="">telefono</label><b>*</b> 
-                                <input type="number" value="{{old('telefono')}}" name="telefono" class="form-control" >    
-                              
-                            </div>
-                        </div>
 
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="licencia_medica">licencia medica</label><b>*</b> 
-                                <input type="text" value="{{old('licencia_medica')}}" name="licencia_medica" class="form-control" required>    
-                                @error('licencia_medica')
+                                <label for="editorial">Editorial</label><b>*</b> 
+                                <input type="text" value="{{old('editorial')}}" name="editorial" class="form-control" required>    
+                                @error('editorial')
                                     <small style="color:red">{{$message}}</small>       
                                 @enderror
                             </div>
                         </div>
-                       
                     </div>
-                    
 
                     <div class="row">
-
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="">especialidad</label><b>*</b> 
-                                <input type="text" value="{{old('especialidad')}}" name="especialidad" class="form-control" required>    
-                                @error('especialidad')
+                                <label for="categoria">Categoría</label><b>*</b> 
+                                <input type="text" value="{{old('categoria')}}" name="categoria" class="form-control" required>    
+                                @error('categoria')
                                     <small style="color:red">{{$message}}</small>       
                                 @enderror
                             </div>
-                        </div>    
+                        </div>
+
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="">email</label><b>*</b> 
-                                <input type="text" value="{{old('email')}}" name="email" class="form-control" required>    
-                                @error('email')
+                                <label for="anio_publicacion">Año de Publicación</label><b>*</b> 
+                                <input type="number" value="{{old('añio_publicacion')}}" name="añio_publicacion" class="form-control" required>    
+                                @error('añio_publicacion')
                                     <small style="color:red">{{$message}}</small>       
                                 @enderror
                             </div>
                         </div>  
-                      
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="password">Password</label><b>*</b> 
-                                <input type="password" name="password" id="password" class="form-control" required>
-                                @error('password')
-                                    <small style="color:red">{{$message}}</small>       
-                                @enderror      
-                            </div>
-                        </div>
+                    </div>
 
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="password_confirmation">Confirmación de Password</label><b>*</b>  
-                                <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" required>
-                                @error('password_confirmation')
-                                    <small style="color:red">{{$message}}</small>       
-                                @enderror    
-                            </div>
-                        </div>
-                    </div>                     
-                        </div>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <a href="{{url('admin/doctores')}}" class="btn btn-secondary">Cancelar</a>   
-                                <button type="submit" class="btn btn-primary">Registrar Doctor</button>
+                                <a href="{{url('admin/libros')}}" class="btn btn-secondary">Cancelar</a>   
+                                <button type="submit" class="btn btn-primary">Registrar Libro</button>
                             </div>
                         </div>
                     </div>
@@ -114,4 +85,3 @@
     </div>
 </div>
 @endsection
-  
