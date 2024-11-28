@@ -10,7 +10,7 @@ class Libro extends Model
     use HasFactory;
 
     // Campos asignables en la base de datos para la tabla "libros"
-    protected $fillable = ['titulo', 'autor', 'isbn', 'editorial', 'publicado_en', 'categoria_id'];
+    protected $fillable = ['titulo', 'autor', 'editorial', 'publicado_en', 'categoria_id'];
 
     // Relación con la tabla "categorias" (opcional)
     public function categoria()

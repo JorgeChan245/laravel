@@ -4,7 +4,7 @@
 <div class="container mt-4">
     <div class="row mb-3">
         <div class="col-md-12 text-center">
-            <h1>Biblioteca Virtual 1</h1>
+            <h1>Biblioteca Virtual </h1>
         </div>
     </div>
     <hr>
@@ -51,7 +51,7 @@
                                 <th class="text-center">Título</th>
                                 <th class="text-center">Autor</th>
                                 <th class="text-center">Género</th>
-                                <th class="text-center">Descripción</th>
+                                <th class="text-center">año de publicacion</th>
                                 <th class="text-center">Acciones</th>
                             </tr>
                         </thead>
@@ -63,7 +63,7 @@
                                     <td>{{ $libro->titulo }}</td>
                                     <td>{{ $libro->autor }}</td>
                                     <td>{{ $libro->genero }}</td>
-                                    <td>{{ Str::limit($libro->descripcion, 50) }}</td>
+                                    <td>{{ $libro->año_publicacion}}</td>
                                     <td class="text-center">
                                         <div class="btn-group" role="group">
                                             <a href="{{ url('/admin/libros/'.$libro->id) }}" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>

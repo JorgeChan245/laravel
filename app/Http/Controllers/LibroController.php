@@ -41,7 +41,7 @@ class LibroController extends Controller
         $libro->titulo = $request->titulo;
         $libro->autor = $request->autor;
         $libro->editorial = $request->editorial;
-        $libro->año_publicacion = $request->anio_publicacion;
+        $libro->año_publicacion = $request->año_publicacion ?: 0; 
        
         $libro->save();
 
@@ -86,8 +86,8 @@ class LibroController extends Controller
         $libro->titulo = $request->titulo;
         $libro->autor = $request->autor;
         $libro->editorial = $request->editorial;
-        $libro->anio_publicacion = $request->anio_publicacion;
-        $libro->isbn = $request->isbn;
+        $libro->anio_publicacion = $request->año_publicacion;
+       
         $libro->save();
 
         return redirect()->route('admin.libros.index')

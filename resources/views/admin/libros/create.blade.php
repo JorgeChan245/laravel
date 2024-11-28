@@ -52,9 +52,9 @@
                     <div class="row">
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="categoria">Categoría</label><b>*</b> 
-                                <input type="text" value="{{old('categoria')}}" name="categoria" class="form-control" required>    
-                                @error('categoria')
+                                <label for="categoria">genero</label><b>*</b> 
+                                <input type="text" value="{{old('genero')}}" name="genero" class="form-control" required>    
+                                @error('genero')
                                     <small style="color:red">{{$message}}</small>       
                                 @enderror
                             </div>
