@@ -85,22 +85,40 @@ Route::put('/admin/secretarias/{id}', [App\Http\Controllers\SecretariaController
 Route::get('/admin/secretarias/{id}/confirm-delete', [App\Http\Controllers\SecretariaController::class, 'confirmDelete'])->name('admin.secretarias.confirmDelete')->middleware('auth');
 //destroy
 Route::delete('/admin/secretarias/{id}', [App\Http\Controllers\SecretariaController::class, 'destroy'])->name('admin.secretarias.destroy')->middleware('auth');
-/////////////////////////////////// para pacientes
-Route::get('/admin/pacientes', [App\Http\Controllers\PacienteController::class, 'index'])->name('admin.pacientes.index')->middleware('auth');
-//
-Route::get('/admin/pacientes/create', [App\Http\Controllers\PacienteController::class, 'create'])->name('admin.pacientes.create')->middleware('auth');
-//
-Route::post('/admin/pacientes/create', [App\Http\Controllers\PacienteController::class, 'store'])->name('admin.pacientes.store')->middleware('auth');
-//
-Route::get('/admin/pacientes/{id}', [App\Http\Controllers\PacienteController::class, 'show'])->name('admin.pacientes.show')->middleware('auth');
-//
-Route::get('/admin/pacientes/{id}/edit', [App\Http\Controllers\PacienteController::class, 'edit'])->name('admin.pacientes.edit')->middleware('auth');
-//
-Route::put('/admin/pacientes/{id}', [App\Http\Controllers\PacienteController::class, 'update'])->name('admin.pacientes.update')->middleware('auth');
-//
-Route::get('/admin/pacientes/{id}/confirm-delete', [App\Http\Controllers\PacienteController::class, 'confirmDelete'])->name('admin.pacientes.confirmDelete')->middleware('auth');
-//
-Route::delete('/admin/pacientes/{id}', [App\Http\Controllers\PacienteController::class, 'destroy'])->name('admin.pacientes.destroy')->middleware('auth');
+///////////////////prestamos
+// Rutas para gestionar préstamos
+Route::get('/admin/prestamos', [App\Http\Controllers\PrestamoController::class, 'index'])
+    ->name('admin.prestamos.index')
+    ->middleware('auth');
+// Ruta para mostrar el formulario de creación de un nuevo préstamo
+Route::get('/admin/prestamos/create', [App\Http\Controllers\PrestamoController::class, 'create'])
+    ->name('admin.prestamos.create')
+    ->middleware('auth');
+// Ruta para guardar un nuevo préstamo en la base de datos
+Route::post('/admin/prestamos/create', [App\Http\Controllers\PrestamoController::class, 'store'])
+    ->name('admin.prestamos.store')
+    ->middleware('auth');
+// Ruta para mostrar los detalles de un préstamo específico
+Route::get('/admin/prestamos/{id}', [App\Http\Controllers\PrestamoController::class, 'show'])
+    ->name('admin.prestamos.show')
+    ->middleware('auth');
+// Ruta para mostrar el formulario de edición de un préstamo específico
+Route::get('/admin/prestamos/{id}/edit', [App\Http\Controllers\PrestamoController::class, 'edit'])
+    ->name('admin.prestamos.edit')
+    ->middleware('auth');
+// Ruta para actualizar los datos de un préstamo específico
+Route::put('/admin/prestamos/{id}', [App\Http\Controllers\PrestamoController::class, 'update'])
+    ->name('admin.prestamos.update')
+    ->middleware('auth');
+// Ruta para confirmar la eliminación de un préstamo
+Route::get('/admin/prestamos/{id}/confirm-delete', [App\Http\Controllers\PrestamoController::class, 'confirmDelete'])
+    ->name('admin.prestamos.confirmDelete')
+    ->middleware('auth');
+// Ruta para eliminar un préstamo de la base de datos
+Route::delete('/admin/prestamos/{id}', [App\Http\Controllers\PrestamoController::class, 'destroy'])
+    ->name('admin.prestamos.destroy')
+    ->middleware('auth');
+
 
 /////////////////////////consultorios
 Route::get('/admin/consultorios', [App\Http\Controllers\ConsultorioController::class, 'index'])->name('admin.consultorios.index')->middleware('auth');

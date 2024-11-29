@@ -178,6 +178,34 @@ body.dark-mode {
 
 
 @endif
+<!-- Prestamos Menu -->
+@if ('admin.prestamos.index')
+
+<li class="nav-item">
+  <a href="#" class="nav-link active">
+    <i class="bi bi-handbag"></i> <!-- Icono representativo de préstamos -->
+    <p>
+      Préstamos
+      <i class="right fas fa-angle-left"></i>
+    </p>
+  </a>
+  <ul class="nav nav-treeview">
+    <li class="nav-item">
+      <a href="{{ url('admin/prestamos/create') }}" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>Registrar Préstamo</p> <!-- Texto para registrar un préstamo -->
+      </a> 
+    </li>
+    <li class="nav-item">
+      <a href="{{ url('admin/prestamos') }}" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>Listado de Préstamos</p> <!-- Texto para listar los préstamos -->
+      </a>
+    </li>
+  </ul>
+</li>
+@endif
+
 
           <!-- Logout -->
 
