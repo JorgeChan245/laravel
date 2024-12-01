@@ -43,15 +43,7 @@ Permission::create(['name' => 'admin.secretarias.edit'])->syncRoles([$admin]);
 Permission::create(['name' => 'admin.secretarias.update'])->syncRoles([$admin]);
 Permission::create(['name' => 'admin.secretarias.confirmDelete'])->syncRoles([$admin]);
 Permission::create(['name' => 'admin.secretarias.destroy'])->syncRoles([$admin]);
-// Crear permisos para admin - pacientes
-Permission::create(['name'=>'admin.pacientes.index'])->syncRoles([$admin,$secretaria]);
-Permission::create(['name' => 'admin.pacientes.create'])->syncRoles([$admin,$secretaria]);
-Permission::create(['name' => 'admin.pacientes.store'])->syncRoles([$admin,$secretaria]);
-Permission::create(['name' => 'admin.pacientes.show'])->syncRoles([$admin,$secretaria]);
-Permission::create(['name' => 'admin.pacientes.edit'])->syncRoles([$admin,$secretaria]);
-Permission::create(['name' => 'admin.pacientes.update'])->syncRoles([$admin,$secretaria]);
-Permission::create(['name' => 'admin.pacientes.confirmDelete'])->syncRoles([$admin,$secretaria]);
-Permission::create(['name' => 'admin.pacientes.destroy'])->syncRoles([$admin,$secretaria]);
+
 // Crear permisos para admin - consultorios
 Permission::create(['name'=>'admin.consultorios.index'])->syncRoles([$admin,$secretaria,$usuario]);
 Permission::create(['name' => 'admin.consultorios.create'])->syncRoles([$admin,$secretaria]);
@@ -83,7 +75,7 @@ Permission::create(['name' => 'admin.horarios.destroy'])->syncRoles([$admin,$sec
 //ajx
 Permission::create(['name'=>'admin.horarios.cargar_datos_consultorio'])->syncRoles($admin,$secretaria);
 //
-Permission::create(['name' => 'user.horarios.calendario'])->syncRoles([$usuario]);
+Permission::create(['name' => 'user..calendario'])->syncRoles([$usuario]);
 
     }
 }

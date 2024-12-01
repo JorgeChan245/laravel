@@ -128,21 +128,12 @@
 
     <!-- About Section -->
     <section id="about" class="about section">
-
       <div class="container">
-
-        <div class="row gy-4 gx-5">
-
-
-          
-
+        <div class="row gy-4 gx-5">        
         </div>
-
       </div>
 
     </section><!-- /About Section -->
-       
-
           <!-- End testimonial item -->
 
               </div>
@@ -161,27 +152,6 @@
    
 
       <!-- Section Title -->
-      <!-- End Section Title -->
-
-    
-
-       
-
-          <!-- End Gallery Item -->
-
-          ><!-- End Gallery Item -->
-
-         <!-- End Gallery Item -->
-
-          <!-- End Gallery Item -->
-<!-- End Gallery Item -->
-
-          <!-- End Gallery Item -->
-
-          <!-- End Gallery Item -->
-
-          <!-- End Gallery Item -->
-
         </div>
 
       </div>

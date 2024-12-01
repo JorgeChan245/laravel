@@ -33,7 +33,7 @@ class LibroController extends Controller
             'titulo' => 'required',
             'autor' => 'required',
             'editorial' => 'nullable',
-            'año_publicacion' => 'nullable|integer',
+            'año_publicacion' => 'nullable|integer|between:1900,' . date('Y'),  
             'genero' => 'nullable|string',
             
         ]);

@@ -21,6 +21,7 @@ class Libro extends Model
     // Si los libros tienen préstamos
     public function prestamos()
     {
-       
+        return $this->hasMany(Prestamo::class, 'libro_id'); // Relación con 'libro_id'
+        return $this->hasMany(Prestamo::class);
     }
 }

@@ -44,13 +44,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    public function secretarias(){
-        return $this->hasMany(Secretaria::class);
-    }
     
      // Relación: Un usuario puede tener varios préstamos
      public function prestamos()
      {
          return $this->hasMany(Prestamo::class); // Relación uno a muchos
+        
      }
 }

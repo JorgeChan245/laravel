@@ -12,12 +12,9 @@ class CreateLibrosTable extends Migration
     public function up(): void
     {
         Schema::create('libros', function (Blueprint $table) {
-            $table->id(); // ID del libro
-            $table->string('titulo'); // Título del libro
-            $table->string('autor'); // Autor del libro          
-            $table->string('editorial')->nullable(); // Editorial (opcional)
-            $table->date('año_publicacion')->nullable(); // Fecha de publicación
-            $table->timestamps(); // created_at y updated_at
+            $table->id();  // ID auto-incrementable
+            $table->string('titulo');  // Campo para el título del libro
+            $table->timestamps();  // Fechas de creación y actualización
         });
     }
 
